@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء رابط واتساب</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #128C7E;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>إنشاء رابط واتساب</h1>
+    <p>أدخل رقم الهاتف (بدون + أو 0):</p>
+    <input type="text" id="phoneNumber" placeholder="مثال: 966123456789">
+    <br><br>
+    <button onclick="openWhatsApp()">فتح واتساب</button>
+
+    <script>
+        function openWhatsApp() {
+            // الحصول على الرقم من مربع النص
+            const phoneNumber = document.getElementById('phoneNumber').value;
+
+            // التحقق من أن الرقم غير فارغ
+            if (!phoneNumber) {
+                alert("الرجاء إدخال رقم الهاتف!");
+                return;
+            }
+
+            // إنشاء رابط واتساب
+            const whatsappLink = `https://wa.me/${phoneNumber}`;
+
+            // فتح الرابط في نافذة جديدة
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
+
+</body>
+</html>
